@@ -10,7 +10,7 @@ function Navbar() {
 
   // set color to selected when we match routes
   const pathMatchRoute = (route) => {
-    if (route == location.pathname) {
+    if (route === location.pathname) {
       return true;
     }
   };
