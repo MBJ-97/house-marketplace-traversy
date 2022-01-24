@@ -10,6 +10,7 @@ import { db } from "../firebase.config";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 import { toast } from "react-toastify";
+import Oauth from "../components/Oauth";
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -117,8 +118,7 @@ function SignUp() {
               </button>
             </div>
           </form>
-
-          {/* Google auth */}
+          <Oauth />
           <Link to="/sign-in" className="registerLink">
             Already have an account ? signUp
           </Link>

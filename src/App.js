@@ -7,6 +7,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
+import PrivateRoute from "./components/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
@@ -16,7 +17,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Explore></Explore>} />
           <Route path="/offers" element={<Offers />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />} />
+          </Route>
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -29,3 +32,5 @@ function App() {
 }
 
 export default App;
+
+//Brad repo link : https://github.com/bradtraversy/house-marketplace/blob/main/src/hooks/useAuthStatus.js
